@@ -1,0 +1,269 @@
+body, html {
+  font-family: "Helvetica";
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  min-width:100%;
+  min-height:100%;
+  font-size: 32px;
+  background-color: #becece;
+  overflow-y:auto;
+}
+
+@font-face  {
+  font-family: 'icomoon';
+  src:url('fonts/icomoon.eot');
+  src:url('fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf') format('truetype'),
+    url('fonts/icomoon.woff') format('woff'),
+    url('fonts/icomoon.svg#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#overlay {
+  position:fixed;
+  top: 0px;
+  left: 0px;
+  height:100%;
+  width:100%;
+  background-color:rgba(0,0,0,.3);
+}
+
+.cont {
+    width: 700px;
+    background-color: #e7e7e7;
+    border-radius: 7px;
+    margin: auto;
+    text-align:center;
+    color:#444444;
+}
+
+#titleCont {
+    width:600px;
+    font-size: 40px;
+    outline:none;
+    padding: 5px;
+}
+
+#footCont {
+  width: 160px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.contentCont {
+    min-height: 60px;
+    line-height: 60px;
+    text-align:left;
+}
+
+#newlink {
+    width: 620px;
+    font-size: 32px;
+}
+
+a {
+  margin-left:5px;
+  text-decoration:none;
+  color:#2a5db0;
+}
+
+.fresh {
+  color:#C0C0C0;
+}
+
+.option {
+  height:60px;
+  line-height:60px;
+  font-size:100%;
+  margin-right:5px;
+  margin-top:5px;
+}
+
+input {
+  border:none;
+  outline: none;
+  margin-left:5px;
+  background-color:#e7e7e7;
+  color:#444444;
+  font-size:100%;
+}
+
+#options {
+  position:fixed;
+  height:135px;
+  width:200px;
+  visibility:hidden;
+}
+
+.btn {
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  display: inline-block;
+  letter-spacing: 1px;
+  outline: none;
+  position: relative;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.btn:after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+/* Pseudo elements for icons */
+.btn:before,
+.icon-plus:after,
+.icon-checkmark:after,
+.icon-minus:after,
+.icon-arrow:after
+ {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+}
+
+.icon-plus:before,
+.icon-plus:after {
+  content: "\e600";
+}
+
+.icon-minus:before,
+.icon-minus:after {
+  content: "\e601";
+}
+
+.icon-checkmark:before,
+.icon-checkmark:after {
+  content: "\e602";
+}
+.icon-arrow:before,
+.icon-arrow:after {
+  content: "\e603";
+}
+
+.btn-7 {
+  background: #92A7AC;
+  color: #e7e7e7;
+  border-radius: 7px;
+  box-shadow: 0 5px #92A7AC;
+  padding: 25px 60px 25px 90px;
+}
+
+.btn-cont {
+  float:right;
+}
+
+/* Icon only style */
+.btn-icon-only {
+  font-size: 100%;
+  padding: 25px 30px;
+}
+
+.btn-icon-only:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 26px;
+  line-height: 54px;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* Button 7g */
+.btn-7g:after {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  font-size: 26px;
+  line-height: 54px;
+  color: #e7e7e7;
+  visibility: hidden;
+  -webkit-transform: scale(2);
+  -moz-transform: scale(2);
+  -ms-transform: scale(2);
+  transform: scale(2);
+  opacity: 0;
+  -webkit-transition: none;
+  -moz-transition: none;
+  transition: none;
+}
+
+.btn-7g.btn-activated:after {
+  visibility: visible;
+  -webkit-animation: dropDownFade 0.5s forwards;
+  -moz-animation: dropDownFade 0.5s forwards;
+  animation: dropDownFade 0.5s forwards;
+} 
+
+
+@-webkit-keyframes dropDownFade {
+  50% { 
+    opacity: 1;
+    -webkit-transform: scale(1);
+  }
+  100% { 
+    opacity: 0;
+    -webkit-transform: scale(1.5);
+  }
+}
+
+@-moz-keyframes dropDownFade {
+  50% { 
+    opacity: 1;
+    -moz-transform: scale(1);
+  }
+  100% { 
+    opacity: 0;
+    -moz-transform: scale(1.5);
+  }
+}
+
+@keyframes dropDownFade {
+  50% { 
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% { 
+    opacity: 0;
+    transform: scale(1.5);
+  }
+}
