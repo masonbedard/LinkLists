@@ -119,7 +119,7 @@ $(document).on('click', ".icon-checkmark", function() {
       classie.add( this, activatedClass );
       setTimeout( function() { 
         classie.remove(self, activatedClass);
-        var overlay = "<div id='overlay'></div>";
+        var overlay = "<div class='overlay'></div>";
         $('body').append(overlay);
         var links = []
         for (var i=0; i<asLength; i++) {
@@ -140,7 +140,24 @@ $(document).on('click', ".icon-checkmark", function() {
 });
 }
 
+eventHandler.helpClicked = function() {
+$(document).on('click', "#help", function() {
+    console.log("HELLO");
+    var overlay = "<div id='helpOverlay' class='overlay'></div>";
+    $('body').append(overlay);
+    view.showHelp();
+});
+};
+
+eventHandler.helpOverlayClicked = function() {
+$(document).on('click', "#helpOverlay", function() {
+    view.hideHelp();
+});
+};
+
 eventHandler.attachEvents = function() {
+  eventHandler.helpClicked();
+  eventHandler.helpOverlayClicked();
   eventHandler.plusClicked();
   eventHandler.inputFocused();
   eventHandler.inputUnfocused();

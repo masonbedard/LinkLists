@@ -25,9 +25,28 @@ view.showOptions = function() {
     "<div class='option'>explore<button id='explore' class='btn btn-7 btn-7g btn-icon-only icon-arrow btn-click btn-cont'></button></div>"+
     "</div>"
     $('body').append(optionsDiv);
-    positionLightboxImage();
+    positionImage('options');
     $("#options").css('visibility', 'visible');
 };
+
+view.showHelp = function() {
+    var helpDiv = "<div id='helpCont' class='cont'>Link Lists is a platform for "+
+        "exploring web content.<br><br>Start by pasting the url of "+
+        "a site that you want to share. Share as many sites as you like!<br><br>Then "+
+        "give your list a title and pass it on. It will now be available to all "+
+        "those exploring Link Lists.<br><br>Now you have two choices. Either create a new "+
+        "link list from scratch, or explore link lists that others have created.<br><br>"+
+        "Feel free to add links to any lists that come your way."+
+        "</div>";
+    $('body').append(helpDiv);
+    positionImage("helpCont");
+    $("#helpCont").css('visibility', 'visible');
+}
+
+view.hideHelp = function() {
+    $("#helpCont").remove();
+    $("#helpOverlay").remove();
+}
 
 view.resetToOriginal = function() {
     var bodyHtml = 
@@ -91,10 +110,10 @@ function makeid() {
     return text;
 }
 
-function positionLightboxImage() {
-  var top = ($(window).height() - $('#options').height()) / 2;
-  var left = ($(window).width() - $('#options').width()) / 2;
-  $('#options')
+function positionImage(id) {
+  var top = ($(window).height() - $('#'+id).height()) / 2;
+  var left = ($(window).width() - $('#'+id).width()) / 2;
+  $('#'+id)
     .css({
       'top': top + $(document).scrollTop(),
       'left': left

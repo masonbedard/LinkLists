@@ -35,7 +35,7 @@ body, html {
   -moz-osx-font-smoothing: grayscale;
 }
 
-#overlay {
+.overlay {
   position:fixed;
   top: 0px;
   left: 0px;
@@ -66,10 +66,27 @@ body, html {
   padding-bottom: 5px;
 }
 
+#help {
+    position:fixed;
+    right:10px;
+    bottom:10px;
+    font-size:42px;
+    color:#92a7ac;
+    cursor:pointer;
+}
+
 .contentCont {
     min-height: 60px;
     line-height: 60px;
     text-align:left;
+}
+
+#helpCont {
+    visibility:hidden;
+    position:fixed;
+    padding:5px;
+    text-align:left;
+    width:800px;
 }
 
 #newlink {
