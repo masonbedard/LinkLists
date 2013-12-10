@@ -1,23 +1,19 @@
 var db = require('./db.js'),
    Linklist = db.Linklist;
 
-var connect = function(socket) {
+function connect(socket) {
+    console.log('someone connected');
     socket.on('pass it on', function(data) {
-        console.log("HELLO");
-        Linklist.saveLinklist(data.title, data.linklist, function(err) {
-            console.log('hello');
-        });
+        Linklist.saveLinklist(data.title, data.linklist, data.key);
     });
 
     socket.on('get linklist', function() {
-        console.log("HERE");
-        Linklist.randomLinklist(function(err, title, linklist) {
-            socket.emit('linklist', {title: title, linklist: linklist})
+        Linklist.randomLinklist(function(err, title, linklist, key) {
+            socket.emit('linklist', {title: title, linklist: linklist, key:key})
         });
     });
 }
 
-// the following is the initialization of the sockets 
 exports.init = function(cio) {
   var io = cio;
   io.sockets.on('connection', connect);
