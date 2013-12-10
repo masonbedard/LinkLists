@@ -36,7 +36,7 @@ view.showHelp = function() {
         "give your list a title and pass it on. It will now be available to all "+
         "those exploring Link Lists.<br><br>Next you can either create a new "+
         "link list from scratch, or explore link lists that others have created.<br><br>"+
-        "Feel free to add links to any lists that come your way."+
+        "Feel free to add links to any lists that come your way!"+
         "</div>";
     $('body').append(helpDiv);
     positionImage("helpCont");
