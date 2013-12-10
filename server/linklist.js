@@ -41,7 +41,6 @@ linklistSchema.statics.saveLinklist = function(title, linklist, key) {
                 }
                 else {
                     console.log('error finding key '+key);
-
                 }
             }
             else {
