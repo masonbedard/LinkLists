@@ -115,7 +115,7 @@ function positionImage(id) {
   var left = ($(window).width() - $('#'+id).width()) / 2;
   $('#'+id)
     .css({
-      'top': top + $(document).scrollTop(),
+      'top': top,
       'left': left
     })
 }
